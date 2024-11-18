@@ -46,8 +46,10 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-    private Collection<Car> cars;
+
     @OneToMany(mappedBy = "owner")
+    private Collection<Car> cars;
+
     public Collection<Car> getCars() {
         return cars;
     }
