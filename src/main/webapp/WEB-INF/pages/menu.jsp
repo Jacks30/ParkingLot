@@ -17,8 +17,9 @@
                             'Cars' ? 'active' : ''}" aria-current="page" href="${pageContext.request.contextPath}/Cars">Cars</a>
                         </li>
                     <li class="nav-item">
-
-                        <a class="nav-link disabled">Disabled</a>
+                        <a class="nav-link
+                            ${activePage eq
+                            'User' ? 'active' : ''}" aria-current="page" href="${pageContext.request.contextPath}/Users">User</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">

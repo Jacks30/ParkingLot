@@ -1,7 +1,6 @@
 package com.parking.parkinglotbun.servlets;
-
-import com.parking.parkinglotbun.common.CarDto;
-import com.parking.parkinglotbun.ejb.CarsBean;
+import com.parking.parkinglotbun.common.UserDto;
+import com.parking.parkinglotbun.ejb.UserBean;
 import jakarta.inject.Inject;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -10,18 +9,18 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "Cars", value = "/Cars")
-public class Cars extends HttpServlet {
+@WebServlet(name = "Users", value = "/Users")
+public class Users extends HttpServlet {
     @Inject
-    CarsBean carsBean;
+    UserBean userBean;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse
             response) throws ServletException, IOException {
-        List<CarDto> cars=carsBean.findAllCars();
-        request.setAttribute("cars",cars);
-        request.setAttribute("numberOfFreeParkingSpots", 10);
-        request.setAttribute("activePage", "Cars");
-        request.getRequestDispatcher("/WEB-INF/pages/cars.jsp").forward(request,response);
+
+        List<UserDto> users=userBean.findAllUsers();
+        request.setAttribute("users",users);
+        request.setAttribute("activePage", "Users");
+        request.getRequestDispatcher("/WEB-INF/pages/user.jsp").forward(request,response);
     }
 
     @Override
