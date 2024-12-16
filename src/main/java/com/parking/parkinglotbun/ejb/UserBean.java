@@ -35,7 +35,7 @@ public class UserBean {
         List<UserDto> usersDto=new ArrayList<>();
         for(User user:users)
         {
-            usersDto.add(new UserDto(user.getUsername(),user.getEmail()));
+            usersDto.add(new UserDto(user.getId(),user.getUsername(),user.getEmail()));
         }
         return usersDto;
     }
